@@ -40,4 +40,21 @@
     left: 50%;
     transform: translate(-50%,-50%);
     pointer-events: none;
+    animation: slideAnimation 3s ease-in-out infinite;
+}
+
+@keyframes slideAnimation {
+    0%{
+        color: black;
+        filter: drop-shadow(0 0 10px purple);
+    }
+    50%{
+        color: purple;
+        filter: drop-shadow(0 0 10px purple);
+    }
+    100%{
+        color: black;
+        filter: drop-shadow(0 0 10px purple);
+    }
+   
 }
