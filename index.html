@@ -32,7 +32,7 @@
               </div>
            </div>
            <!-- Home Screen -->
-           <main class="homeScreen h-100 p-3 position-relative" >
+           <main class="homeScreen h-100 p-3 position-relative" style="display: none;">
             <div class="slide-container bg-white rounded-4 shadow position-relative p-2 " style="top:400px; left:0; right:0">
                 <input type="range"
                     min="0"
@@ -46,14 +46,59 @@
                 </div>
             </main>
             <!-- Apps Screen -->
-            <div class="appScreen text-light bg-dark p-2" style="height: 540px; display: none;" >
+            <main class="appScreen text-light bg-dark p-2" style="height: 540px; display: none;" >
                 <div class="d-flex justify-content-center ">
                     <div class="d-flex flex-column align-items-center p-2">
                     <i class="bi bi-person-rolodex text-danger   bg-light rounded fs-1 px-2"></i>
                     <span>Contacts</span>
                     </div>
                 </div>
-            </div>
+            </main>
+
+            <!-- Contact List Screen  -->
+            <main class="contactListScreen " style="height: 90%;">
+                <div class="contactListContainer p-2 ">
+                    <!-- title -->
+                    <h2 class="text-center mt-2 fw-bolder text-light ">Contacts</h2>
+                    <!-- search -->
+                    <div class=" position-relative">
+                        <i class="bi bi-search position-absolute text-secondary my-1 px-2 fs-4" style="right:10px;"></i>
+                        <input type="text"
+                        class="form-control rounded-pill"
+                        placeholder="Search Contact"
+                        >
+
+                    </div>
+                    <!-- spinner -->
+                    <div class=" showSpinner bg-light rounded mt-2 m-auto p-2 w-25 d-flex justify-content-center">
+                         <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                         </div>
+                    </div>
+                    <!-- list -->
+                    <div id="list" class="bg-light pt-2 mt-2">
+                        <div class="">
+                            <span id="userCount">6</span>
+                            Contacts
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Accordion Item #3
+                                    </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </main>
               
         </div>
 
