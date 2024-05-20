@@ -20,7 +20,7 @@
 <body>
     <div class="wrapper min-vh-100 d-flex justify-content-center align-items-center">
        
-        <div class="phone  border border-dark rounded-5 shadow-lg bg-white  border-5 overflow-y-hidden" style="height: 600px; width: 300px;">
+        <div class="phone  border border-dark rounded-5 shadow-lg bg-white  border-5 overflow-y-scroll" style="height: 600px; width: 300px;">
            <!-- Mobile top section -->
            <div class="text-white d-flex align-items-center justify-content-between pt-3 px-3" style="height: 50px;">
               <span>12:12</span>
@@ -32,7 +32,7 @@
               </div>
            </div>
            <!-- Home Screen -->
-           <main class="homeScreen h-100 p-3 position-relative">
+           <main class="homeScreen h-100 p-3 position-relative" >
             <div class="slide-container bg-white rounded-4 shadow position-relative p-2 " style="top:400px; left:0; right:0">
                 <input type="range"
                     min="0"
@@ -42,7 +42,17 @@
                     id="mySlider"
                    />
                 <label  id="label" for="mySlider" class="text-center position-absolute" >Slide To Unlock</label>
-           </main>
+          
+                </div>
+            </main>
+            <!-- Apps Screen -->
+            <div class="appScreen text-light bg-dark p-2" style="height: 540px; display: none;" >
+                <div class="d-flex justify-content-center ">
+                    <div class="d-flex flex-column align-items-center p-2">
+                    <i class="bi bi-person-rolodex text-danger   bg-light rounded fs-1 px-2"></i>
+                    <span>Contacts</span>
+                    </div>
+                </div>
             </div>
               
         </div>

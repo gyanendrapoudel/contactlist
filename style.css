@@ -5,6 +5,10 @@
     background-position: center;
 
 }
+/* to remove scroll bar */
+.phone::-webkit-scrollbar{
+    display: none;
+}
 .slider{
     width: 100%;
     -webkit-appearance: none;
