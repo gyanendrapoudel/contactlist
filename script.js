@@ -1,5 +1,6 @@
+const apiEP = "https://randomuser.me/api?results=2"
+let userList =[]
 // slide to go to app screen
-
 const slide = document.querySelector('.slider')
 
 slide.addEventListener('change',(e)=>{
@@ -21,3 +22,11 @@ const displayAppScreen=()=>{
         homeScreen.remove()
         appScreen.style.display = 'block'
 }
+
+const fetchUser = async (url)=>{
+   const response =  await fetch(url)
+   const result = await response.json()
+   userList=result.results
+   console.log(userList)
+}
+fetchUser(apiEP)
