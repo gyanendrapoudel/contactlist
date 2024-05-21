@@ -1,4 +1,4 @@
-const apiEP = "https://randomuser.me/api?results=2"
+const apiEP = "https://randomuser.me/api?results=6"
 let userList =[]
 // slide to go to app screen
 const slide = document.querySelector('.slider')
@@ -101,6 +101,22 @@ const displayContactList = (userList)=>{
                             </div>`
     })
     accordion.innerHTML = accordionHTML
-    console.log(accordionHTML)
 
 }
+
+// search functionality for contact list 
+
+document.querySelector('#searchContact').addEventListener('keyup',(e)=>{
+    const {value} = e.target
+    console.log(userList)
+    
+    const filteredContacts = userList.filter((user)=>{
+        const{first,last} =user.name
+        const name = (first+" "+last).toLowerCase()
+        return name.includes(value.toLowerCase());
+    })
+    
+    // displaying only filter contacts
+    displayContactList(filteredContacts)
+})
+
