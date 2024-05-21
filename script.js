@@ -45,20 +45,57 @@ fetchUser(apiEP)
 const displayContactList = (userList)=>{
     
     document.querySelector('#list').style.display="block"
-
+    // contact number
+    document.querySelector('#userCount').textContent=userList.length
+   
+    //accordion html 
     const accordion = document.querySelector('.accordion')
     let accordionHTML=''
-    let numbers = ["One", "Two", "Three", "Four"]
     userList.map((user,i)=>{
-        accordionHTML+=`<div class="accordion-item">
+        accordionHTML += `<div class="accordion-item">
                                     <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${numbers[i]}" aria-expanded="false" aria-controls="collapse${numbers[i]}">
-                                        Accordion Item #3
+                                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+                                        <img src="${user.picture.thumbnail}" alt="profile pic" class="rounded-circle">
+                                        <div class="ms-2">
+                                         <div class="fw-bolder">
+                                         ${user.name.title}
+                                         ${user.name.first}${user.name.last}
+                                         </div>
+                                          <div> ${user.location.street.number}
+                                          ${user.location.street.name}
+                                          </div>
+                                          
+                                        </div>
+                                        
                                     </button>
                                     </h2>
-                                    <div id="collapse${numbers[i]}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div id="collapse${i}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                       <img src="${user.picture.large}" class="rounded-circle"></img>
+                                       <div>
+                                       <div class="fw-bolder ">
+                                         ${user.name.title}
+                                         ${user.name.first}${user.name.last}
+                                         </div>
+                                         <div>
+                                          <a href="tel:${user.cell}">
+                                          <i class="bi bi-phone-fill"></i>
+                                          ${user.cell}
+                                          </a>
+                                          </div>
+                                          <div>
+                                          <a href="mailto:${user.email}">
+                                          <i class="bi bi-envelope-fill"></i>
+                                          ${user.email}
+                                          </a>
+                                          </div>
+                                          <div> 
+                                          ${user.location.street.number}
+                                          ${user.location.street.name}
+                                          ${user.location.city}
+
+                                          </div>
+                                       </div>
                                     </div>
                                     </div>
                             </div>`
