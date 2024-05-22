@@ -23,6 +23,15 @@ const displayAppScreen=()=>{
         appScreen.style.display = 'block'
 }
 
+const displayContactScreen = () => {
+
+  const appScreen = document.querySelector('.appScreen')
+  const contactListScreen = document.querySelector('.contactListScreen')
+  appScreen.remove()
+  contactListScreen.style.display = 'block'
+  fetchUser(apiEP)
+}
+
 const fetchUser = async (url)=>{
    const response =  await fetch(url)
    const result = await response.json()
@@ -39,7 +48,7 @@ const fetchUser = async (url)=>{
 
 
 }
-fetchUser(apiEP)
+
 
 // display user list function
 const displayContactList = (userList)=>{
@@ -119,4 +128,5 @@ document.querySelector('#searchContact').addEventListener('keyup',(e)=>{
     // displaying only filter contacts
     displayContactList(filteredContacts)
 })
+
 

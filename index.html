@@ -32,7 +32,7 @@
               </div>
            </div>
            <!-- Home Screen -->
-           <main class="homeScreen h-100 p-3 position-relative" style="display: none;">
+           <main class="homeScreen h-100 p-3 position-relative" >
             <div class="slide-container bg-white rounded-4 shadow position-relative p-2 " style="top:400px; left:0; right:0">
                 <input type="range"
                     min="0"
@@ -49,14 +49,14 @@
             <main class="appScreen text-light bg-dark p-2" style="height: 540px; display: none;" >
                 <div class="d-flex justify-content-center ">
                     <div class="d-flex flex-column align-items-center p-2">
-                    <i class="bi bi-person-rolodex text-danger   bg-light rounded fs-1 px-2"></i>
+                    <i class="bi bi-person-rolodex text-danger   bg-light rounded fs-1 px-2" onclick="displayContactScreen()"></i>
                     <span>Contacts</span>
                     </div>
                 </div>
             </main>
 
             <!-- Contact List Screen  -->
-            <main class="contactListScreen " style="height: 90%;">
+            <main class="contactListScreen " style="height: 90%; display: none;">
                 <div class="contactListContainer p-2 ">
                     <!-- title -->
                     <h2 class="text-center mt-2 fw-bolder text-light ">Contacts</h2>

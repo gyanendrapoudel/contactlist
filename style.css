@@ -46,6 +46,9 @@
     pointer-events: none;
     animation: slideAnimation 3s ease-in-out infinite;
 }
+.appScreen i{
+    cursor: pointer;
+}
 
 @keyframes slideAnimation {
     0%{
