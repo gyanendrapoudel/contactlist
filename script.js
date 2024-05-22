@@ -36,7 +36,7 @@ const fetchUser = async (url)=>{
    const response =  await fetch(url)
    const result = await response.json()
    userList=result.results
-   console.log(userList)
+
 
 //  hide spinner
     const spin = document.querySelector('.showSpinner')
@@ -117,7 +117,7 @@ const displayContactList = (userList)=>{
 
 document.querySelector('#searchContact').addEventListener('keyup',(e)=>{
     const {value} = e.target
-    console.log(userList)
+    
     
     const filteredContacts = userList.filter((user)=>{
         const{first,last} =user.name
